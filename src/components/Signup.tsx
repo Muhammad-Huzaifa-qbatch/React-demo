@@ -6,20 +6,30 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter }
 import { Form, FormField, FormControl, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
+import { NavLink, useNavigate } from "react-router-dom";
+
+// const formSchema = z.object({
+  
+// });
 
 const formSchema = z.object({
-  fullname: z.string(),
-  email: z.string(),
-  password: z.string().min(8,{
-    message: "Password must be atleast 8 characters"
-  }),
-  address: z.string(),
-  phone_no: z.string().regex(/^\d{11}$/),
-  website: z.string().regex(/^(https?:\/\/)?(www\.)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(\/[a-zA-Z0-9-._~:/?#\[\]@!$&'()*+,;=]*)?$/),
-  zip_code: z.string().regex(/^\d{5}$/)
+  fullname: z.string().min(1, "Name is required"),
+  email: z.string().email("Invalid email address"),
+  password: z.string().min(8, { message: "Password must be at least 8 characters" }),
+  address: z.string().min(1, "Address is required"),
+  phone_no: z.string().regex(/^\d{11}$/, "Phone must be 11 digits"),
+  website: z.string()
+    .regex(
+      /^(https?:\/\/)?(www\.)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(\/[^\s]*)?$/,
+      "Invalid website URL"
+    )
+    .optional().or(z.literal('')), 
+  zip_code: z.string().regex(/^\d{5}$/, "ZIP code must be 5 digits"),
 });
 
+
 const Signup =()=>{
+  const navigate = useNavigate();
   const form = useForm({
     resolver: zodResolver(formSchema),
       defaultValues:{
@@ -33,8 +43,9 @@ const Signup =()=>{
       },
   })
 
-  const onSubmit = (values:object)=>{
-    console.log(values)
+  const onSubmit = (values: object) => {
+    console.log(values);
+    navigate("/signin"); 
   }
 
   return(
@@ -140,11 +151,21 @@ const Signup =()=>{
                 </FormItem>
               )} />
 
+              <div className="text-sm text-muted-foreground text-center w-full">
+                    Already have an account?{" "}
+                    <NavLink to="/signin" className="text-blue-600 hover:underline">
+                      Sign In
+                    </NavLink>
+              </div>
+
 
 
           </CardContent>
           <CardFooter>
-            <Button className="w-full">Sign Up</Button>
+            {/* <NavLink to="/signin" className="text-blue-600 hover:underline"> */}
+              <Button className="w-full">Sign Up</Button>
+            {/* </NavLink> */}
+            
           </CardFooter>
         </Card>
         

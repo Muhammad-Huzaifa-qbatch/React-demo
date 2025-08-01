@@ -5,8 +5,8 @@ import './App.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Signup from './components/Signup'
-import Login from './components/Signin'
-import Home from './components/Home'
+import Signin from './components/Signin'
+// import Home from './components/Home'
 import IndexPage from './components/IndexPage'
 
 
@@ -23,8 +23,8 @@ function App() {
 
     },
     {
-      path: '/login',
-      element: <><Navbar/><Login/></>
+      path: '/signin',
+      element: <><Navbar/><Signin/></>
     },
     {
       path: '/index',

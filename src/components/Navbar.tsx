@@ -45,7 +45,7 @@ const Navbar = ()=>{
               <div className="flex items-center justify-between">
                   <ul className="flex flex-row font-medium mt-0 space-x-8 rtl:space-x-reverse text-sm">
                       <li>
-                        <NavLink to="/"><img src='/images/topLogo.png'/></NavLink>
+                        <NavLink to="/"><img className='h-8 w-12' src='/images/topLogo.png'/></NavLink>
                       </li>
                       <li>
                           <a href="#" className="dark:text-white hover:underline" aria-current="page">Pricing</a>
@@ -84,7 +84,7 @@ const Navbar = ()=>{
 
                   <ul className="flex flex-row font-medium mt-0 space-x-4 text-sm">
                     <li>
-                      <NavLink to="/login" className="dark:text-white hover:underline">Sign in</NavLink>
+                      <NavLink to="/signin" className="dark:text-white hover:underline">Sign in</NavLink>
                     </li>
                     <li>
                       <a href="#" className="dark:text-white hover:underline">Request Demo</a>

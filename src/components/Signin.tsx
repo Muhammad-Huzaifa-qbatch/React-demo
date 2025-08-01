@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter }
 import { Form, FormField, FormControl, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const formSchema = z.object({
   email: z.string(),
@@ -15,6 +16,7 @@ const formSchema = z.object({
 });
 
 const Signin =()=>{
+  const navigate = useNavigate()
   const form = useForm({
     resolver: zodResolver(formSchema),
       defaultValues:{
@@ -25,6 +27,7 @@ const Signin =()=>{
 
   const onSubmit = (values:object)=>{
     console.log(values)
+    navigate("/");
   }
 
   return(
@@ -64,6 +67,13 @@ const Signin =()=>{
                 </FormItem>
               )} />
           </CardContent>
+          <div className="text-sm text-muted-foreground text-center w-full">
+            Not have an account yet?{" "}
+            <NavLink to="/signup" className="text-blue-600 hover:underline">
+              Sign Up
+            </NavLink>
+          </div>
+
           <CardFooter>
             <Button className="w-full">Sign in</Button>
           </CardFooter>
