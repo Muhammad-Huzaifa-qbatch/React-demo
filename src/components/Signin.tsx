@@ -31,7 +31,7 @@ const Signin =()=>{
   }
 
   return(
-    <div>
+    <div className="min-h-screen flex items-center justify-center px-4">
       <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)}>
         <Card className="w-full max-w-sm">

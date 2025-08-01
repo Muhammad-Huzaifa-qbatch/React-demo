@@ -36,7 +36,7 @@
 // export default SecondSection
 
 
-import React from 'react';
+
 import { Shield, Folder, Star, Award, Bookmark, Heart } from 'lucide-react';
 
 const Features = () => {

@@ -33,8 +33,6 @@
 // export default BenefitsDisplay
 
 
-import React from 'react'
-
 const BenefitsDisplay = () => {
   return (
 
