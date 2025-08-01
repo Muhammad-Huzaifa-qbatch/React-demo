@@ -31,25 +31,25 @@ const Signin =()=>{
   }
 
   return(
-    <div className="min-h-screen flex items-center justify-center px-4">
+    <div className="min-h-screen flex items-center justify-center px-4 py-8">
       <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)}>
-        <Card className="w-full max-w-sm">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="w-full max-w-2xl">
+        <Card className="w-full p-6">
           <CardHeader>
             <CardTitle className="text-2xl">Sign In</CardTitle>
               <CardDescription>
                 Enter your email below to Signin to your account
               </CardDescription>
           </CardHeader>
-          <CardContent className="grid gap-4">
+          <CardContent className="space-y-4">
             <FormField 
               control={form.control} 
               name="email" 
               render={({ field })=>(
-                <FormItem className="grid gap-4">
+                <FormItem className="w-full">
                   <FormLabel>Email</FormLabel>
                     <FormControl>
-                      <Input placeholder="m@example.com" type="email" {...field} />
+                      <Input className="w-full" placeholder="m@example.com" type="email" {...field} />
                     </FormControl>
                     <FormMessage />
                 </FormItem>
@@ -58,10 +58,10 @@ const Signin =()=>{
               control={form.control} 
               name="password" 
               render={({ field })=>(
-                <FormItem className="grid gap-4">
+                <FormItem className="w-full">
                   <FormLabel>Password</FormLabel>
                     <FormControl>
-                      <Input type="password" {...field} />
+                      <Input className="w-full" type="password" {...field} />
                     </FormControl>
                     <FormMessage />
                 </FormItem>

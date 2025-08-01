@@ -49,10 +49,10 @@ const Signup =()=>{
   }
 
   return(
-    <div>
+    <div className="min-h-screen flex items-center justify-center px-4 py-15">
         <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)}>
-          <Card className="w-full max-w-sm">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="w-full max-w-lg">
+          <Card className="w-full max-w-lg p-6">
             <CardHeader>
               <CardTitle className="text-2xl">Sign Up</CardTitle>
                 <CardDescription>
