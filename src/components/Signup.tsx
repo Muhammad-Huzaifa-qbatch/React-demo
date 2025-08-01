@@ -49,128 +49,132 @@ const Signup =()=>{
   }
 
   return(
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)}>
-        <Card className="w-full max-w-sm">
-          <CardHeader>
-            <CardTitle className="text-2xl">Sign Up</CardTitle>
-              <CardDescription>
-                Create New Account
-              </CardDescription>
-          </CardHeader>
-          <CardContent className="grid gap-4">
-
-          <FormField 
-              control={form.control} 
-              name="fullname" 
-              render={({ field })=>(
-                <FormItem className="grid gap-4">
-                  <FormLabel>Full Name</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Muhammad Mukhtar" type="text" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                </FormItem>
-              )} />
+    <div>
+        <Form {...form}>
+        <form onSubmit={form.handleSubmit(onSubmit)}>
+          <Card className="w-full max-w-sm">
+            <CardHeader>
+              <CardTitle className="text-2xl">Sign Up</CardTitle>
+                <CardDescription>
+                  Create New Account
+                </CardDescription>
+            </CardHeader>
+            <CardContent className="grid gap-4">
 
             <FormField 
-              control={form.control} 
-              name="email" 
-              render={({ field })=>(
-                <FormItem className="grid gap-4">
-                  <FormLabel>Email</FormLabel>
-                    <FormControl>
-                      <Input placeholder="m@example.com" type="email" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                </FormItem>
-              )} />
+                control={form.control} 
+                name="fullname" 
+                render={({ field })=>(
+                  <FormItem className="grid gap-4">
+                    <FormLabel>Full Name</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Muhammad Mukhtar" type="text" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                  </FormItem>
+                )} />
 
               <FormField 
-              control={form.control} 
-              name="password" 
-              render={({ field })=>(
-                <FormItem className="grid gap-4">
-                  <FormLabel>Password</FormLabel>
-                    <FormControl>
-                      <Input type="password" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                </FormItem>
-              )} />
+                control={form.control} 
+                name="email" 
+                render={({ field })=>(
+                  <FormItem className="grid gap-4">
+                    <FormLabel>Email</FormLabel>
+                      <FormControl>
+                        <Input placeholder="m@example.com" type="email" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                  </FormItem>
+                )} />
 
-              <FormField 
-              control={form.control} 
-              name="address" 
-              render={({ field })=>(
-                <FormItem className="grid gap-4">
-                  <FormLabel>Address</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Enter your Address" type="text" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                </FormItem>
-              )} />
+                <FormField 
+                control={form.control} 
+                name="password" 
+                render={({ field })=>(
+                  <FormItem className="grid gap-4">
+                    <FormLabel>Password</FormLabel>
+                      <FormControl>
+                        <Input type="password" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                  </FormItem>
+                )} />
 
-              <FormField 
-              control={form.control} 
-              name="phone_no" 
-              render={({ field })=>(
-                <FormItem className="grid gap-4">
-                  <FormLabel>Phone Number</FormLabel>
-                    <FormControl>
-                      <Input placeholder="03458888454" type="text" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                </FormItem>
-              )} />
+                <FormField 
+                control={form.control} 
+                name="address" 
+                render={({ field })=>(
+                  <FormItem className="grid gap-4">
+                    <FormLabel>Address</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Enter your Address" type="text" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                  </FormItem>
+                )} />
 
-              <FormField 
-              control={form.control} 
-              name="website" 
-              render={({ field })=>(
-                <FormItem className="grid gap-4">
-                  <FormLabel>Website</FormLabel>
-                    <FormControl>
-                      <Input placeholder="https://www.google.com/" type="text" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                </FormItem>
-              )} />
+                <FormField 
+                control={form.control} 
+                name="phone_no" 
+                render={({ field })=>(
+                  <FormItem className="grid gap-4">
+                    <FormLabel>Phone Number</FormLabel>
+                      <FormControl>
+                        <Input placeholder="03458888454" type="text" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                  </FormItem>
+                )} />
 
-              <FormField 
-              control={form.control} 
-              name="zip_code" 
-              render={({ field })=>(
-                <FormItem className="grid gap-4">
-                  <FormLabel>Zip Code</FormLabel>
-                    <FormControl>
-                      <Input placeholder="56000" type="text" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                </FormItem>
-              )} />
+                <FormField 
+                control={form.control} 
+                name="website" 
+                render={({ field })=>(
+                  <FormItem className="grid gap-4">
+                    <FormLabel>Website</FormLabel>
+                      <FormControl>
+                        <Input placeholder="https://www.google.com/" type="text" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                  </FormItem>
+                )} />
 
-              <div className="text-sm text-muted-foreground text-center w-full">
-                    Already have an account?{" "}
-                    <NavLink to="/signin" className="text-blue-600 hover:underline">
-                      Sign In
-                    </NavLink>
-              </div>
+                <FormField 
+                control={form.control} 
+                name="zip_code" 
+                render={({ field })=>(
+                  <FormItem className="grid gap-4">
+                    <FormLabel>Zip Code</FormLabel>
+                      <FormControl>
+                        <Input placeholder="56000" type="text" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                  </FormItem>
+                )} />
+
+                <div className="text-sm text-muted-foreground text-center w-full">
+                      Already have an account?{" "}
+                      <NavLink to="/signin" className="text-blue-600 hover:underline">
+                        Sign In
+                      </NavLink>
+                </div>
 
 
 
-          </CardContent>
-          <CardFooter>
-            {/* <NavLink to="/signin" className="text-blue-600 hover:underline"> */}
-              <Button className="w-full">Sign Up</Button>
-            {/* </NavLink> */}
-            
-          </CardFooter>
-        </Card>
-        
-      </form>
-    </Form>
+            </CardContent>
+            <CardFooter>
+              {/* <NavLink to="/signin" className="text-blue-600 hover:underline"> */}
+                <Button className="w-full">Sign Up</Button>
+              {/* </NavLink> */}
+              
+            </CardFooter>
+          </Card>
+          
+        </form>
+      </Form>
+
+    </div>
+    
   )
 }
 
